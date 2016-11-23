@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123104533) do
+ActiveRecord::Schema.define(version: 20161123110018) do
 
   create_table "faculties", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20161123104533) do
     t.date     "defended"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "faculty_id"
+    t.index ["faculty_id"], name: "index_theses_on_faculty_id"
   end
 
 end
